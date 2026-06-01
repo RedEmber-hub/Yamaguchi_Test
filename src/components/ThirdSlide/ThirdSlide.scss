@@ -1,0 +1,68 @@
+.thirdSlide {
+  position: relative;
+
+  &__image-background {
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__text-block {
+    position: relative;
+    z-index: 2;
+    padding: 53px 67px;
+    gap: 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__title {
+    h1 {
+      text-align: right;
+      color: rgba(75, 75, 75, 1);
+      font-size: 45.35px;
+    }
+  }
+
+  &__subtitle {
+    align-items: flex-end;
+    p {
+      color: rgba(115, 115, 115, 1);
+      font-size: 34.87px;
+    }
+  }
+
+  &__sticker {
+    position: absolute; // или absolute для точного позиционирования
+    z-index: 3;
+    bottom: -480px; // 🔹 Отступ от нижнего края
+    right: 50px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__sticker-icon {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__sticker-text {
+    position: relative;
+    z-index: 2;
+    padding: 65px 36px;
+
+    p {
+      font-size: 21.86px;
+      text-align: center;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}

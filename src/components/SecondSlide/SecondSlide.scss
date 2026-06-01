@@ -1,0 +1,101 @@
+.secondSlide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  &__image-background {
+    position: relative;
+    width: 668px; // 🔹 Фиксированная ширина
+    flex-shrink: 0; // 🔹 Запрещаем блоку сжиматься
+    height: 100%;
+    z-index: 1;
+    margin-left: 128px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+  &__sticker {
+    position: absolute;
+    top: 60px; // отступ от верха слайда
+    left: 60px; // отступ от левого края
+    z-index: 2;
+    width: 160px;
+    height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &-icon {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+
+    &-text {
+      position: relative;
+      z-index: 2;
+      padding: 24px;
+
+      p {
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 3;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; // прижимаем всё к правому краю
+    justify-content: center;
+    padding: 0 80px 0 40px;
+    gap: 32px;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 420px;
+    text-align: right;
+  }
+
+  &__title h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  &__subtitle p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+}
