@@ -1,0 +1,112 @@
+.productSlider {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  gap: clamp(24px, 6vw, 140px);
+
+  &__navigation-wrapper {
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  &__custom-navigation {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    transform: translateX(-620px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(var(--radius, 353px) * 2);
+      height: calc(var(--radius, 353px) * 2);
+      border-radius: 50%;
+      border: 10px solid rgba(98, 91, 86, 1);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  &__nav-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 74px;
+    height: 74px;
+    margin: -37px;
+    padding: 13px;
+
+    background-color: rgba(116, 109, 104, 1);
+    border: 3px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+
+    transform: rotate(var(--angle)) translateX(var(--radius, 353px)) rotate(calc(-1 * var(--angle)));
+
+    &--active {
+      width: 103px;
+      height: 103px;
+      margin: -52px;
+      padding: 13px;
+      background-color: rgba(219, 219, 219, 1);
+    }
+  }
+
+  &__dot-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: none;
+
+    &--active {
+      filter: brightness(0) saturate(100%) invert(38%) sepia(8%) saturate(15%) hue-rotate(190deg) brightness(98%)
+        contrast(95%);
+    }
+  }
+
+  &__slider-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    max-width: 1240px;
+    max-height: 800px;
+    flex: 1;
+  }
+
+  &__swiper {
+    width: 1240px;
+    height: 800px;
+    border-radius: 70px;
+    overflow: hidden;
+  }
+
+  &__slide-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(162, 156, 154, 1);
+  }
+
+  &__main-image {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  }
+
+  &__center-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}

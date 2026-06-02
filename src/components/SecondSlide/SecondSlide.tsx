@@ -25,7 +25,6 @@ export default function SecondSlide() {
           </div>
         </div>
 
-        {/* 🔹 Правая часть: Текст */}
         <div className="secondSlide__info">
           <div className="secondSlide__text-block">
             <div className="secondSlide__title">

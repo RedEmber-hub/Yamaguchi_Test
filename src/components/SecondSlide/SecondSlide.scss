@@ -8,8 +8,7 @@
 
   &__image-background {
     position: relative;
-    width: 668px; // 🔹 Фиксированная ширина
-    flex-shrink: 0; // 🔹 Запрещаем блоку сжиматься
+    width: 668px;
     height: 100%;
     z-index: 1;
     margin-left: 128px;
@@ -24,8 +23,8 @@
   }
   &__sticker {
     position: absolute;
-    top: 60px; // отступ от верха слайда
-    left: 60px; // отступ от левого края
+    top: 60px;
+    left: 60px;
     z-index: 2;
     width: 160px;
     height: 160px;
@@ -69,7 +68,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; // прижимаем всё к правому краю
+    align-items: flex-end;
     justify-content: center;
     padding: 0 80px 0 40px;
     gap: 32px;
