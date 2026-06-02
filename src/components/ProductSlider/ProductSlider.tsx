@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
-import { Mousewheel, Navigation, EffectFade } from 'swiper/modules';
+import { Mousewheel, Navigation } from 'swiper/modules';
 import { useState } from 'react';
 
 // Импортируем иконки
@@ -14,7 +14,6 @@ import SecondSlide from '@/components/SecondSlide/SecondSlide';
 import ThirdSlide from '@/components/ThirdSlide/ThirdSlide';
 
 import 'swiper/css';
-import 'swiper/css/effect-fade';
 import './ProductSlider.scss';
 
 const slides = [
@@ -80,9 +79,8 @@ export default function ProductSlider() {
             const isActive = btnIndex === 1;
 
             return (
-              <>
+              <div key={`${slide.id}-${btnIndex}`} className="productSlider__nav-item">
                 <button
-                  key={`${slide.id}-${btnIndex}`}
                   className={`productSlider__nav-dot ${isActive ? 'productSlider__nav-dot--active' : ''}`}
                   onClick={() => handleSlideClick(slideIndex)}
                   title={slide.title}
@@ -98,7 +96,7 @@ export default function ProductSlider() {
                 <div className="slide-text">
                   <p className="text-label">{slide.text}</p>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
@@ -106,11 +104,10 @@ export default function ProductSlider() {
 
       <div className="productSlider__slider-wrapper">
         <Swiper
-          modules={[Mousewheel, Navigation, EffectFade]}
+          modules={[Mousewheel, Navigation]}
           mousewheel={{ enabled: true, sensitivity: 1 }}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          speed={600}
+          effect="slide"
+          speed={300}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           onSwiper={(swiper) => setSwiperInstance(swiper)}
           className="productSlider__swiper"
